@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,11 +46,17 @@ body{
     padding:40px 25px;
     position:relative;
     overflow:hidden;
+
     background:
-    radial-gradient(circle at center,
-    rgba(122,44,255,.25),
-    transparent 45%),
-    linear-gradient(180deg,#000,#090909);
+    linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.85)
+    ),
+    url('foto_daniel.jpeg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero::before{
@@ -62,7 +67,7 @@ body{
     background:radial-gradient(circle,
     rgba(212,175,55,.15),
     transparent 70%);
-    animation: pulseGlow 6s infinite ease-in-out;
+    animation:pulseGlow 6s infinite ease-in-out;
 }
 
 @keyframes pulseGlow{
@@ -137,7 +142,7 @@ h1{
     100%{transform:scale(1);}
 }
 
-/* HOW */
+/* SECTIONS */
 
 .section{
     padding:80px 25px;
@@ -163,14 +168,14 @@ h1{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
     margin-top:40px;
 }
 
 .gallery img{
     width:100%;
-    height:280px;
+    height:340px;
     object-fit:cover;
     border-radius:18px;
     transition:.4s;
@@ -190,6 +195,7 @@ h1{
 .daniel p{
     color:#ddd;
     margin-top:15px;
+    line-height:1.8;
 }
 
 .instagram{
@@ -200,6 +206,12 @@ h1{
     padding:14px 28px;
     border-radius:50px;
     text-decoration:none;
+    transition:.3s;
+}
+
+.instagram:hover{
+    background:var(--gold);
+    color:black;
 }
 
 /* SPONSOR */
@@ -211,7 +223,7 @@ h1{
 
 .gotogym{
     color:var(--gold);
-    font-size:1.5rem;
+    font-size:1.8rem;
     font-weight:700;
 }
 
@@ -219,6 +231,24 @@ h1{
     padding:40px;
     text-align:center;
     color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.gallery img{
+    height:260px;
+}
+
+h1{
+    font-size:3rem;
+}
+
+.tagline{
+    font-size:1.1rem;
+}
+
 }
 
 </style>
@@ -249,7 +279,7 @@ Tu canción. Tu momento. Tu escenario.
 
 <a
 class="cta"
-href="https://chat.whatsapp.com/TU-LINK-DE-GRUPO"
+href="https://chat.whatsapp.com/FztmeoYGrds1iFCoWXkz7A"
 target="_blank">
 🎤 QUIERO VIVIR LA EXPERIENCIA
 </a>
@@ -280,13 +310,11 @@ target="_blank">
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200">
+<img src="experienica1.jpeg" alt="Momentos Vibra">
 
-<img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1200">
+<img src="expriencia2.jpeg" alt="Momentos Vibra">
 
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200">
-
-<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?w=1200">
+<img src="Reservas_Vibra.jpeg" alt="Momentos Vibra">
 
 </div>
 
@@ -295,6 +323,18 @@ target="_blank">
 <section class="section">
 
 <div class="daniel">
+
+<img
+src="foto_daniel.jpeg"
+alt="Daniel Mondragón"
+style="
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid #D4AF37;
+margin-bottom:25px;
+">
 
 <h2>Daniel Mondragón</h2>
 
@@ -335,10 +375,38 @@ Conocer GoToGym
 
 </section>
 
+<section class="section">
+
+<h2>Únete al grupo oficial</h2>
+
+<p style="margin-bottom:30px;color:#ccc;">
+Comparte tu nombre y tu canción favorita.
+</p>
+
+<img
+src="QR_Momentos_vibra.jpeg"
+alt="QR Momentos Vibra"
+style="
+max-width:260px;
+width:100%;
+border-radius:20px;
+margin-bottom:30px;
+">
+
+<br>
+
+<a
+class="cta"
+href="https://chat.whatsapp.com/FztmeoYGrds1iFCoWXkz7A"
+target="_blank">
+🎵 UNIRME AL GRUPO
+</a>
+
+</section>
+
 <div class="footer">
-Momentos Vibra · Bogotá
+Momentos Vibra · Zona T · Bogotá
 </div>
 
 </body>
 </html>
-```
