@@ -1,63 +1,344 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Momentos Vibra</title>
+
+<title>Momentos Vibra | Karaoke Experience Bogotá</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{
+
+:root{
+    --gold:#D4AF37;
+    --black:#050505;
+    --dark:#111111;
+    --white:#ffffff;
+    --purple:#7a2cff;
+}
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
     background:#000;
-    color:white;
-    font-family:Arial, sans-serif;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
     text-align:center;
+    padding:40px 25px;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at center,
+    rgba(122,44,255,.25),
+    transparent 45%),
+    linear-gradient(180deg,#000,#090909);
 }
 
-.container{
-    max-width:600px;
-    padding:20px;
+.hero::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,
+    rgba(212,175,55,.15),
+    transparent 70%);
+    animation: pulseGlow 6s infinite ease-in-out;
+}
+
+@keyframes pulseGlow{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    font-size:14px;
+    letter-spacing:4px;
+    color:var(--gold);
+    margin-bottom:20px;
 }
 
 h1{
-    color:#F3C74B;
-    font-size:3rem;
+    font-size:clamp(3rem,9vw,6rem);
+    line-height:1;
+    font-weight:800;
 }
 
-.button{
-    display:inline-block;
+.tagline{
+    font-size:1.3rem;
     margin-top:20px;
-    padding:15px 30px;
-    background:#F3C74B;
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:10px;
+    color:#ddd;
 }
-</style>
 
+.location{
+    margin-top:20px;
+    color:var(--gold);
+    font-weight:600;
+}
+
+.cta{
+    display:inline-block;
+    margin-top:35px;
+    background:var(--gold);
+    color:#000;
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+    animation:pulseButton 3s infinite;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+}
+
+@keyframes pulseButton{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+/* HOW */
+
+.section{
+    padding:80px 25px;
+    text-align:center;
+}
+
+.section h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.steps{
+    max-width:700px;
+    margin:auto;
+}
+
+.steps p{
+    margin:14px 0;
+    font-size:1.1rem;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-top:40px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+/* DANIEL */
+
+.daniel{
+    max-width:700px;
+    margin:auto;
+}
+
+.daniel p{
+    color:#ddd;
+    margin-top:15px;
+}
+
+.instagram{
+    display:inline-block;
+    margin-top:25px;
+    color:white;
+    border:1px solid var(--gold);
+    padding:14px 28px;
+    border-radius:50px;
+    text-decoration:none;
+}
+
+/* SPONSOR */
+
+.sponsor{
+    background:#080808;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.gotogym{
+    color:var(--gold);
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.footer{
+    padding:40px;
+    text-align:center;
+    color:#777;
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<section class="hero">
 
-<h1>🎤 Momentos Vibra</h1>
+<div class="hero-content">
 
-<p>
+<div class="logo">
+MOMENTOS VIBRA
+</div>
+
+<h1>
+Esta noche,<br>
+la voz es tuya.
+</h1>
+
+<p class="tagline">
 Tu canción. Tu momento. Tu escenario.
 </p>
 
+<div class="location">
+📍 Zona T · Bogotá
+</div>
+
 <a
-class="button"
-href="https://wa.me/573105818768">
-Solicitar Canción
+class="cta"
+href="https://chat.whatsapp.com/TU-LINK-DE-GRUPO"
+target="_blank">
+🎤 QUIERO VIVIR LA EXPERIENCIA
 </a>
 
 </div>
 
+</section>
+
+<section class="section">
+
+<h2>¿Cómo participar?</h2>
+
+<div class="steps">
+
+<p>🎵 Únete al grupo oficial</p>
+
+<p>🎤 Comparte tu nombre y tu canción favorita</p>
+
+<p>✨ Prepárate para vivir tu Momento Vibra</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Vive la experiencia</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200">
+
+<img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1200">
+
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200">
+
+<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?w=1200">
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="daniel">
+
+<h2>Daniel Mondragón</h2>
+
+<p>
+Músico, cantante y anfitrión de Momentos Vibra.
+Una experiencia creada para conectar personas a través de la música, la energía y las mejores noches de Bogotá.
+</p>
+
+<a
+class="instagram"
+target="_blank"
+href="https://www.instagram.com/danielmondragonmusic/">
+Seguir en Instagram
+</a>
+
+</div>
+
+</section>
+
+<section class="section sponsor">
+
+<h2>Patrocinador Oficial</h2>
+
+<div class="gotogym">
+GoToGym
+</div>
+
+<p style="margin-top:15px;color:#ccc;">
+Conectando personas con experiencias extraordinarias.
+</p>
+
+<a
+class="instagram"
+target="_blank"
+href="https://app.gotogym.store">
+Conocer GoToGym
+</a>
+
+</section>
+
+<div class="footer">
+Momentos Vibra · Bogotá
+</div>
+
 </body>
 </html>
+```
