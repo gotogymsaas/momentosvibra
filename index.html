@@ -3,410 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Momentos Vibra: karaoke, cócteles temáticos e invitados especiales con performance de Daniel Mondragón. Jueves 23 de julio, 7:00 p. m., Zona Rosa de Bogotá.">
+<title>Momentos Vibra | 23 de julio · Bogotá</title>
 
-<title>Momentos Vibra | Karaoke Experience Bogotá</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-    --gold:#D4AF37;
-    --black:#050505;
-    --dark:#111111;
+    --gold:#d8b65a;
+    --gold-light:#f6df9a;
+    --black:#030303;
+    --dark:#0b0b0d;
     --white:#ffffff;
-    --purple:#7a2cff;
+    --muted:#c8c8cc;
+    --line:rgba(216,182,90,.28);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
     font-family:'Poppins',sans-serif;
-    background:#000;
-    color:#fff;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(216,182,90,.08),transparent 30%),
+        radial-gradient(circle at 90% 40%,rgba(216,182,90,.05),transparent 28%),
+        var(--black);
+    color:var(--white);
     overflow-x:hidden;
 }
-
-/* HERO */
+img{display:block;max-width:100%}
+a{color:inherit}
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    min-height:100svh;
+    display:grid;
+    place-items:center;
     text-align:center;
-    padding:40px 25px;
+    padding:50px 24px;
     position:relative;
     overflow:hidden;
-
     background:
-    linear-gradient(
-    rgba(0,0,0,.75),
-    rgba(0,0,0,.85)
-    ),
-    url('foto_daniel.jpeg');
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+        linear-gradient(180deg,rgba(0,0,0,.40),rgba(0,0,0,.88)),
+        url('foto_daniel.jpeg') center/cover no-repeat;
 }
-
 .hero::before{
     content:'';
     position:absolute;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle,
-    rgba(212,175,55,.15),
-    transparent 70%);
-    animation:pulseGlow 6s infinite ease-in-out;
+    inset:-20%;
+    background:
+        radial-gradient(circle at 50% 45%,rgba(216,182,90,.24),transparent 28%),
+        repeating-linear-gradient(115deg,transparent 0 90px,rgba(255,255,255,.025) 92px 93px);
+    animation:heroGlow 8s ease-in-out infinite alternate;
 }
-
-@keyframes pulseGlow{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:18px;
+    border:1px solid rgba(216,182,90,.35);
+    border-radius:28px;
+    pointer-events:none;
 }
+@keyframes heroGlow{to{transform:scale(1.08) rotate(.5deg)}}
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:700px;
-    animation:fadeUp 1s ease;
-}
+.hero-content{position:relative;z-index:2;max-width:900px;animation:fadeUp 1s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.logo{
-    font-size:14px;
-    letter-spacing:4px;
-    color:var(--gold);
-    margin-bottom:20px;
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:.78rem;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    border:1px solid var(--line);
+    background:rgba(0,0,0,.42);
+    backdrop-filter:blur(12px);
+    padding:10px 16px;
+    border-radius:999px;
 }
 
 h1{
-    font-size:clamp(3rem,9vw,6rem);
-    line-height:1;
-    font-weight:800;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(4.2rem,11vw,8.5rem);
+    line-height:.82;
+    margin-top:28px;
+    letter-spacing:-.045em;
+    text-shadow:0 12px 45px rgba(0,0,0,.8);
+}
+.gold-text{
+    color:var(--gold-light);
+    background:linear-gradient(115deg,#9d7625,#fff1b8 40%,#d4a93f 65%,#fff0b1);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.tagline{
-    font-size:1.3rem;
-    margin-top:20px;
-    color:#ddd;
-}
-
-.location{
-    margin-top:20px;
-    color:var(--gold);
+.event-date{
+    margin:28px auto 0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    color:#fff;
     font-weight:600;
+    letter-spacing:.04em;
 }
+.event-date span{display:flex;align-items:center;gap:8px}
+.tagline{font-size:clamp(1rem,2.5vw,1.28rem);margin:23px auto 0;color:#e7e7e7;max-width:760px;line-height:1.7}
 
+.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:34px}
+.cta,.btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:56px;
+    padding:15px 28px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    transition:transform .3s,box-shadow .3s,background .3s;
+}
 .cta{
-    display:inline-block;
-    margin-top:35px;
-    background:var(--gold);
-    color:#000;
-    text-decoration:none;
-    padding:18px 35px;
-    border-radius:50px;
-    font-weight:700;
-    transition:.3s;
-    animation:pulseButton 3s infinite;
+    color:#080808;
+    background:linear-gradient(135deg,#fff0aa,#c69729);
+    box-shadow:0 14px 40px rgba(216,182,90,.22);
+    animation:softPulse 3s ease-in-out infinite;
 }
+.btn-outline{border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.35);backdrop-filter:blur(10px)}
+.cta:hover,.btn-outline:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(216,182,90,.3)}
+@keyframes softPulse{50%{box-shadow:0 14px 55px rgba(216,182,90,.38)}}
 
-.cta:hover{
-    transform:translateY(-3px);
+.section{padding:105px 24px;position:relative}
+.container{width:min(1120px,100%);margin:auto}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 48px}
+.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:700}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.4rem);line-height:1;margin-top:12px}
+.lead{color:var(--muted);line-height:1.8;margin-top:18px}
+
+.event-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:stretch}
+.flyer-card,.experience-card,.sponsor-card,.host-card{
+    border:1px solid var(--line);
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 24px 80px rgba(0,0,0,.38);
 }
+.flyer-card{padding:12px}
+.flyer-card img{width:100%;height:100%;max-height:820px;object-fit:cover;border-radius:20px}
 
-@keyframes pulseButton{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.05);}
-    100%{transform:scale(1);}
+.experience-card{padding:38px;display:flex;flex-direction:column;justify-content:center}
+.experience-card h3{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:1.05}
+.features{display:grid;gap:16px;margin-top:28px}
+.feature{display:flex;gap:14px;align-items:flex-start;padding:17px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(0,0,0,.22);transition:.3s}
+.feature:hover{transform:translateX(5px);border-color:var(--line)}
+.feature-icon{font-size:1.45rem;line-height:1}
+.feature strong{display:block;margin-bottom:4px}
+.feature p{color:var(--muted);font-size:.92rem;line-height:1.5}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery figure{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.1);min-height:380px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .7s ease}
+.gallery figure::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.72))}
+.gallery figure:hover img{transform:scale(1.06);filter:saturate(1.1)}
+
+.host-card{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;max-width:980px;margin:auto}
+.host-photo{height:100%;min-height:500px;object-fit:cover}
+.host-copy{padding:50px}
+.host-copy h2{text-align:left}
+.host-copy p{color:var(--muted);line-height:1.8;margin-top:18px}
+
+.sponsor-section{background:linear-gradient(180deg,transparent,#090909 22%,#090909 80%,transparent)}
+.sponsors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px;margin:auto}
+.sponsor-card{min-height:260px;padding:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:.35s}
+.sponsor-card:hover{transform:translateY(-7px);border-color:rgba(216,182,90,.55)}
+.sponsor-logo{width:min(290px,100%);max-height:150px;object-fit:contain;border-radius:16px}
+.gotogym{font-size:2.3rem;font-weight:800;color:var(--gold-light);letter-spacing:-.04em}
+.sponsor-card p{color:var(--muted);font-size:.92rem;margin-top:18px}
+
+.join{text-align:center;max-width:760px;margin:auto}
+.qr{width:min(260px,80vw);margin:30px auto 0;border-radius:24px;border:8px solid #fff;box-shadow:0 20px 70px rgba(216,182,90,.18)}
+.footer{padding:45px 24px;text-align:center;color:#85858b;border-top:1px solid rgba(255,255,255,.06);font-size:.88rem}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:850px){
+    .event-grid,.host-card{grid-template-columns:1fr}
+    .host-photo{min-height:380px;width:100%}
+    .gallery{grid-template-columns:1fr}
+    .gallery figure{min-height:320px}
 }
-
-/* SECTIONS */
-
-.section{
-    padding:80px 25px;
-    text-align:center;
+@media(max-width:620px){
+    .hero{min-height:92svh;padding:44px 18px}
+    .hero::after{inset:10px;border-radius:20px}
+    h1{font-size:4.4rem}
+    .event-date{font-size:.9rem;gap:8px 14px}
+    .section{padding:78px 18px}
+    .experience-card,.host-copy{padding:28px 22px}
+    .sponsors{grid-template-columns:1fr}
+    .actions{flex-direction:column;align-items:stretch}
+    .cta,.btn-outline{width:100%}
 }
-
-.section h2{
-    font-size:2rem;
-    margin-bottom:20px;
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
 }
-
-.steps{
-    max-width:700px;
-    margin:auto;
-}
-
-.steps p{
-    margin:14px 0;
-    font-size:1.1rem;
-}
-
-/* GALLERY */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
-    margin-top:40px;
-}
-
-.gallery img{
-    width:100%;
-    height:340px;
-    object-fit:cover;
-    border-radius:18px;
-    transition:.4s;
-}
-
-.gallery img:hover{
-    transform:scale(1.04);
-}
-
-/* DANIEL */
-
-.daniel{
-    max-width:700px;
-    margin:auto;
-}
-
-.daniel p{
-    color:#ddd;
-    margin-top:15px;
-    line-height:1.8;
-}
-
-.instagram{
-    display:inline-block;
-    margin-top:25px;
-    color:white;
-    border:1px solid var(--gold);
-    padding:14px 28px;
-    border-radius:50px;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.instagram:hover{
-    background:var(--gold);
-    color:black;
-}
-
-/* SPONSOR */
-
-.sponsor{
-    background:#080808;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-.gotogym{
-    color:var(--gold);
-    font-size:1.8rem;
-    font-weight:700;
-}
-
-.footer{
-    padding:40px;
-    text-align:center;
-    color:#777;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.gallery img{
-    height:260px;
-}
-
-h1{
-    font-size:3rem;
-}
-
-.tagline{
-    font-size:1.1rem;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<section class="hero">
+<header class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">MOMENTOS VIBRA · EDICIÓN ESPECIAL</div>
+        <h1><span class="gold-text">Karaoke</span><br>Experience</h1>
+        <div class="event-date">
+            <span>📅 Jueves 23 de julio</span>
+            <span>🕖 7:00 p. m.</span>
+            <span>📍 Vibra · Zona Rosa, Bogotá</span>
+        </div>
+        <p class="tagline">Invitados especiales, cócteles temáticos, karaoke y performance en vivo por Daniel Mondragón.</p>
+        <div class="actions">
+            <a class="cta" href="https://chat.whatsapp.com/FztmeoYGrds1iFCoWXkz7A" target="_blank" rel="noopener">🎤 RESERVAR MI CANCIÓN</a>
+            <a class="btn-outline" href="#evento">DESCUBRIR EL EVENTO</a>
+        </div>
+    </div>
+</header>
 
-<div class="hero-content">
+<main>
+<section class="section" id="evento">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="kicker">23 de julio · 7:00 p. m.</div>
+            <h2>La noche donde tu voz se convierte en el espectáculo</h2>
+            <p class="lead">Reserva tu canción ingresando al grupo oficial y vive la mejor experiencia de Momentos Vibra.</p>
+        </div>
 
-<div class="logo">
-MOMENTOS VIBRA
-</div>
-
-<h1>
-Esta noche,<br>
-la voz es tuya.
-</h1>
-
-<p class="tagline">
-Tu canción. Tu momento. Tu escenario.
-</p>
-
-<div class="location">
-📍 Zona T · Bogotá
-</div>
-
-<a
-class="cta"
-href="https://chat.whatsapp.com/FztmeoYGrds1iFCoWXkz7A"
-target="_blank">
-🎤 QUIERO VIVIR LA EXPERIENCIA
-</a>
-
-</div>
-
+        <div class="event-grid">
+            <div class="flyer-card reveal">
+                <img src="Flayer%2023%20julio%20.jpeg" alt="Flyer Karaoke con Daniel Mondragón, jueves 23 de julio">
+            </div>
+            <div class="experience-card reveal">
+                <div class="kicker">Una experiencia completa</div>
+                <h3>Más que karaoke.<br>Una noche para recordar.</h3>
+                <div class="features">
+                    <div class="feature"><div class="feature-icon">🎙️</div><div><strong>Karaoke en vivo</strong><p>Elige tu canción y conviértete en protagonista.</p></div></div>
+                    <div class="feature"><div class="feature-icon">✨</div><div><strong>Invitados especiales</strong><p>Sorpresas y artistas que elevarán la energía de la noche.</p></div></div>
+                    <div class="feature"><div class="feature-icon">🍸</div><div><strong>Cócteles temáticos</strong><p>Sabores creados para acompañar cada momento.</p></div></div>
+                    <div class="feature"><div class="feature-icon">🔥</div><div><strong>Performance especial</strong><p>Show en vivo por Daniel Mondragón.</p></div></div>
+                    <div class="feature"><div class="feature-icon">📍</div><div><strong>Vibra Discoteca</strong><p>Carrera 13 # 83-47, quinto piso · Zona Rosa de Bogotá.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="section">
-
-<h2>¿Cómo participar?</h2>
-
-<div class="steps">
-
-<p>🎵 Únete al grupo oficial</p>
-
-<p>🎤 Comparte tu nombre y tu canción favorita</p>
-
-<p>✨ Prepárate para vivir tu Momento Vibra</p>
-
-</div>
-
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="kicker">Vive la experiencia</div>
+            <h2>Tu canción. Tu momento. Tu escenario.</h2>
+        </div>
+        <div class="gallery">
+            <figure class="reveal"><img src="experienica1.jpeg" alt="Experiencia Momentos Vibra"></figure>
+            <figure class="reveal"><img src="expriencia2.jpeg" alt="Karaoke Momentos Vibra"></figure>
+            <figure class="reveal"><img src="Reservas_Vibra.jpeg" alt="Reservas Momentos Vibra"></figure>
+        </div>
+    </div>
 </section>
 
 <section class="section">
+    <div class="container">
+        <article class="host-card reveal">
+            <img class="host-photo" src="foto_daniel.jpeg" alt="Daniel Mondragón">
+            <div class="host-copy">
+                <div class="kicker">Host & performer</div>
+                <h2>Daniel Mondragón</h2>
+                <p>Músico, cantante y anfitrión de Momentos Vibra. Una experiencia creada para conectar personas a través de la música, la energía y las mejores noches de Bogotá.</p>
+                <a class="btn-outline" target="_blank" rel="noopener" href="https://www.instagram.com/danielmondragonmusic/">Seguir en Instagram</a>
+            </div>
+        </article>
+    </div>
+</section>
 
-<h2>Vive la experiencia</h2>
-
-<div class="gallery">
-
-<img src="experienica1.jpeg" alt="Momentos Vibra">
-
-<img src="expriencia2.jpeg" alt="Momentos Vibra">
-
-<img src="Reservas_Vibra.jpeg" alt="Momentos Vibra">
-
-</div>
-
+<section class="section sponsor-section">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="kicker">Aliados de la experiencia</div>
+            <h2>Patrocinadores oficiales</h2>
+        </div>
+        <div class="sponsors">
+            <a class="sponsor-card reveal" href="https://app.gotogym.store" target="_blank" rel="noopener">
+                <div class="gotogym">GoToGym</div>
+                <p>Conectando personas con experiencias extraordinarias.</p>
+            </a>
+            <div class="sponsor-card reveal">
+                <img class="sponsor-logo" src="mondragon_producciones.jpeg" alt="Mondragón Producciones">
+                <p>Producción y entretenimiento para momentos inolvidables.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="section">
-
-<div class="daniel">
-
-<img
-src="foto_daniel.jpeg"
-alt="Daniel Mondragón"
-style="
-width:220px;
-height:220px;
-object-fit:cover;
-border-radius:50%;
-border:3px solid #D4AF37;
-margin-bottom:25px;
-">
-
-<h2>Daniel Mondragón</h2>
-
-<p>
-Músico, cantante y anfitrión de Momentos Vibra.
-Una experiencia creada para conectar personas a través de la música, la energía y las mejores noches de Bogotá.
-</p>
-
-<a
-class="instagram"
-target="_blank"
-href="https://www.instagram.com/danielmondragonmusic/">
-Seguir en Instagram
-</a>
-
-</div>
-
+    <div class="join reveal">
+        <div class="kicker">Reserva tu canción</div>
+        <h2>Únete al grupo oficial</h2>
+        <p class="lead">Ingresa al grupo, comparte tu nombre y la canción que quieres interpretar.</p>
+        <img class="qr" src="QR_Momentos_vibra.jpeg" alt="Código QR para unirse al grupo de Momentos Vibra">
+        <a class="cta" href="https://chat.whatsapp.com/FztmeoYGrds1iFCoWXkz7A" target="_blank" rel="noopener">🎵 UNIRME AL GRUPO</a>
+    </div>
 </section>
+</main>
 
-<section class="section sponsor">
+<footer class="footer">Momentos Vibra · Jueves 23 de julio · 7:00 p. m. · Vibra, Zona Rosa de Bogotá</footer>
 
-<h2>Patrocinador Oficial</h2>
+<script>
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.14 });
 
-<div class="gotogym">
-GoToGym
-</div>
-
-<p style="margin-top:15px;color:#ccc;">
-Conectando personas con experiencias extraordinarias.
-</p>
-
-<a
-class="instagram"
-target="_blank"
-href="https://app.gotogym.store">
-Conocer GoToGym
-</a>
-
-</section>
-
-<section class="section">
-
-<h2>Únete al grupo oficial</h2>
-
-<p style="margin-bottom:30px;color:#ccc;">
-Comparte tu nombre y tu canción favorita.
-</p>
-
-<img
-src="QR_Momentos_vibra.jpeg"
-alt="QR Momentos Vibra"
-style="
-max-width:260px;
-width:100%;
-border-radius:20px;
-margin-bottom:30px;
-">
-
-<br>
-
-<a
-class="cta"
-href="https://chat.whatsapp.com/FztmeoYGrds1iFCoWXkz7A"
-target="_blank">
-🎵 UNIRME AL GRUPO
-</a>
-
-</section>
-
-<div class="footer">
-Momentos Vibra · Zona T · Bogotá
-</div>
-
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+</script>
 </body>
 </html>
